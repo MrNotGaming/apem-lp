@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>APEM ESTAMPADOS LP</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #121212;
+      color: #f1f1f1;
+      scroll-behavior: smooth;
+    }
+
+    /* ----- Barra Superior ----- */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #1e1e1e;
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header img.logo {
+      width: 60px;
+      height: auto;
+    }
+
+    nav a {
+      margin-left: 20px;
+      color: #f1f1f1;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: #00aaff;
+    }
+
+    /* ----- Hero Principal ----- */
+    .hero {
+      background: url("https://via.placeholder.com/1200x500.png?text=APEM+ESTAMPADOS+LP") center/cover no-repeat;
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin: 10px 0 20px;
+    }
+
+    .btn {
+      padding: 12px 20px;
+      background: #00aaff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      margin: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #0088cc;
+    }
+
+    /* ----- Sección General ----- */
+    main {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #00aaff;
+    }
+
+    /* ----- Producciones ----- */
+    .producciones {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .produccion {
+      position: relative;
+      background: #2e2e2e;
+      width: 100%;
+      height: 250px;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .produccion img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+      opacity: 0.9;
+      transition: transform 0.5s ease, filter 0.5s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    .produccion:hover img {
+      transform: scale(1.1);
+      filter: brightness(1.2);
+    }
+
+    /* Marca de agua repetida */
+    .produccion::after {
+      content: "APEM LP APEM LP APEM LP APEM LP APEM LP APEM LP APEM LP APEM LP ";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.07);
+      font-weight: bold;
+      transform: rotate(-30deg);
+      white-space: pre;
+      line-height: 40px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ----- Sección Información ----- */
+    #informacion {
+      margin-top: 50px;
+      padding: 40px 20px;
+      background: #1a1a1a;
+      border-radius: 10px;
+    }
+
+    #informacion p {
+      text-align: center;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    /* ----- Footer ----- */
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background: #1e1e1e;
+      color: #aaa;
+      margin-top: 40px;
+    }
+
+    footer h3 {
+      color: #00aaff;
+      margin-bottom: 10px;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.95rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .contact-item img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .contact-item a {
+      color: #f1f1f1;
+      text-decoration: none;
+    }
+
+    .contact-item a:hover {
+      color: #00aaff;
+    }
+  </style>
+</head>
+<body>
+  <!-- Barra superior -->
+  <header>
+    <img src="https://media.discordapp.net/attachments/1049461673473359882/1406506823959183502/ChatGPT_Image_17_ago_2025_12_12_14_a.m..png?ex=68a2b70e&is=68a1658e&hm=d4182285eac1e7df5d50176e4246f77ae86372de0a6583d9d2e46d1046574fbb&=&format=webp&quality=lossless&width=449&height=449" alt="Logo" class="logo">
+    <nav>
+      <a href="#registro">Registro</a>
+      <a href="#producciones">Producciones</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- Hero principal -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>APEM ESTAMPADOS LP</h1>
+      <p>Serigrafía y estampados personalizados de alta calidad</p>
+      <button class="btn">Registrarse</button>
+      <a href="#informacion"><button class="btn">Más información</button></a>
+    </div>
+  </section>
+
+  <!-- Contenido principal -->
+  <main>
+    <section id="producciones">
+      <h2>Producciones Realizadas</h2>
+      <div class="producciones">
+        <div class="produccion">
+          <img src="https://media.discordapp.net/attachments/1049461673473359882/1406506823577632798/image-removebg-preview_1.png?ex=68a2b70e&is=68a1658e&hm=0132f1efc49c16f43e7f898272f7887a7a69a3d864d10d6cacd3db606de71ca0&=&format=webp&quality=lossless&width=337&height=448" alt="Producción 1">
+        </div>
+        <div class="produccion">
+          <img src="https://via.placeholder.com/300x200.png?text=Trabajo+2" alt="Producción 2">
+        </div>
+        <div class="produccion">
+          <img src="https://via.placeholder.com/300x200.png?text=Trabajo+3" alt="Producción 3">
+        </div>
+      </div>
+    </section>
+
+    <!-- Nueva sección: Información -->
+    <section id="informacion">
+      <h2>¿Qué es la Serigrafía?</h2>
+      <p>
+        La serigrafía es una técnica de impresión que permite plasmar diseños con gran detalle y durabilidad en diferentes superficies como telas, plásticos, vidrio o papel.  
+        El proceso consiste en transferir tinta a través de una malla tensada, permitiendo resultados nítidos y resistentes.  
+        <br><br>
+        En <strong>APEM ESTAMPADOS LP</strong> trabajamos con materiales de primera calidad y un proceso cuidadoso, garantizando estampados únicos, vibrantes y duraderos.  
+        <br><br>
+        ¡Nuestra misión es que tu idea cobre vida con la mejor calidad en cada detalle!
+      </p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="contacto">
+    <h3>Contacto</h3>
+    <div class="contact-info">
+      <div class="contact-item">
+        <img src="https://media.discordapp.net/attachments/1049461673473359882/1406510429815046174/raw.png?ex=68a2ba6a&is=68a168ea&hm=bb90209d9763896f34fbab2abf2ad252e2b505e6d6e09a8c279f1c6f14034deb&=&format=webp&quality=lossless&width=543&height=543" alt="Email">
+        <a href="mailto:apemestampados@hotmail.com">apemestampados@hotmail.com</a>
+      </div>
+      <div class="contact-item">
+        <img src="https://media.discordapp.net/attachments/1049461673473359882/1406511643298369547/raw.png?ex=68a2bb8b&is=68a16a0b&hm=13150ed23231640236abb0d91a61f1f9244cb1988514c632b92489bf30509508&=&format=webp&quality=lossless&width=543&height=543" alt="Facebook">
+        <a href="https://facebook.com/EstampadosApemLp" target="_blank">Estampados Apem Lp</a>
+      </div>
+      <div class="contact-item">
+        <img src="https://media.discordapp.net/attachments/1049461673473359882/1406511669995245640/raw.png?ex=68a2bb91&is=68a16a11&hm=35376db3fc60866a1feb57fc05751f931c2ebb2fe7c35cf7a35c78bbbea4d90d&=&format=webp&quality=lossless&width=543&height=543" alt="WhatsApp">
+        <a href="https://wa.me/573134983573" target="_blank">3134983573</a> - 
+        <a href="https://wa.me/573203207529" target="_blank">3203207529</a>
+      </div>
+    </div>
+    <br>
+    <p>Lead Developer: S´amuel P´ineda</p>
+  </footer>
+</body>
+</html>
